@@ -584,8 +584,27 @@ class _BerandaPageState extends State<BerandaPage> {
     required String label,
   }) {
     final selected = _selectedNav == index;
+
+    void _onNavTap() {
+      setState(() => _selectedNav = index);
+      switch (index) {
+        case 1:
+          Navigator.pushNamed(context, '/menu');
+          break;
+        case 2:
+          Navigator.pushNamed(context, '/keranjang');
+          break;
+        case 3:
+          Navigator.pushNamed(context, '/pesan');
+          break;
+        default:
+          // index 0 = Beranda (sudah di sini), index 4 = Profil (belum ada)
+          break;
+      }
+    }
+
     return GestureDetector(
-      onTap: () => setState(() => _selectedNav = index),
+      onTap: _onNavTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

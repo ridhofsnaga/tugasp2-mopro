@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/beranda_page.dart';
+import 'pages/cart_page.dart';
 import 'pages/menu_detail_page.dart';
 import 'pages/menu_list_page.dart';
 import 'pages/order_page.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const BerandaPage(),
         '/detail': (context) => const MenuDetailPage(),
         '/menu': (context) => const MenuListPage(),
+        '/keranjang': (context) => const CartPage(),
         '/pesan': (context) => const OrderPage(),
       },
     );
